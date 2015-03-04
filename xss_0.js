@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /* Adding the hacked iframe and removing the actual body, which contains the searched query with the code inside */
-    var iframeHtml = "<div id=\"iframe-hack\"><iframe style=\"width:100%; height:100%; position:fixed; left:0; top:0;\" src=\"http://cis331.cis.upenn.edu/project2\"></iframe></div>";
+    var iframeHtml = "<div id=\"iframe-hack\"><iframe style=\"width:100%; height:100%; position:fixed; left:0; top:0; border:none\" src=\"http://cis331.cis.upenn.edu/project2\"></iframe></div>";
     $("body").append(iframeHtml);
     $('body > :not(#iframe-hack)').hide();
 
