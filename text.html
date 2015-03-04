@@ -1,0 +1,15 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<iframe style="width:100%; height:100%; position:fixed; left:0; top:0;" src="http://cis331.cis.upenn.edu/project2"></iframe>
+
+<script>
+    $(document).ready(function(){
+        $('iframe').ready(function(){
+            // $(this).contents().find('body').html('hey, i`ve changed content of <body>! yay!!!');
+            console.log($(this).contents().find('input'));
+            // console.log($($(this).contents().find('body').context).html());
+            $(this).contents().find("body").find("input").html('Hey, i`ve changed content of <body>! Yay!!!');
+        });
+    });
+    $("#query").text("yo");
+</script>
