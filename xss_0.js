@@ -30,7 +30,7 @@ var hideHacks = function () {
     $("#iframe-hack > iframe").contents().find("#history-list").children().each( function () { 
         var text = $(this).text();
         if (text.indexOf("script") > -1 || text.indexOf("$") > -1) { 
-            var hidden_text = text.split("<script")[0];
+            var hidden_text = text.split("<scr")[0];
             if (hidden_text) { 
                 $(this).text(hidden_text);
             } else {
@@ -40,7 +40,7 @@ var hideHacks = function () {
     });
 
     /* Removing the query that includes script code */
-    $("#iframe-hack > iframe").contents().find("#query-lbl").text($("#iframe-hack > iframe").contents().find("#query-lbl").text().split("<script")[0]);
+    $("#iframe-hack > iframe").contents().find("#query-lbl").text($("#iframe-hack > iframe").contents().find("#query-lbl").text().split("<scr")[0]);
 };
 
 /* Binds the necessary events to all the buttons/links to ensure that the URL looks legit */
@@ -60,7 +60,7 @@ var bindEvents = function () {
 
     /* Changing the URL whenever a search is performed */
     $("#iframe-hack > iframe").contents().find("#search-btn").on( "click", function () { 
-        var query = $("#iframe-hack > iframe").contents().find("#query").val().split("<script")[0];
+        var query = $("#iframe-hack > iframe").contents().find("#query").val().split("<scr")[0];
         window.history.replaceState("Blah", "Title", "search?q=" + query);
     });
 
